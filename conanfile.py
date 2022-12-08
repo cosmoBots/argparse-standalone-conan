@@ -2,7 +2,7 @@ from conans import ConanFile, CMake, tools
 
 
 class ArgparseStandaloneConan(ConanFile):
-    name = "argparse-standalone"
+    name = "argp-standalone"
     version = "1.0.1"
     license = "GNU LGPL v2.1"
     author = "Txinto Vaz txinto@elporis.com"
@@ -40,6 +40,7 @@ conan_basic_setup()''')
 
     def package(self):
         self.copy("*.h", dst="include", src="argp-standalone")
+        self.copy("*.h", dst="include", src="argp-standalone/include/argp-standalone")
         self.copy("*argp-standalone.lib", dst="lib", keep_path=False)
         self.copy("*.dll", dst="bin", keep_path=False)
         self.copy("*.so", dst="lib", keep_path=False)

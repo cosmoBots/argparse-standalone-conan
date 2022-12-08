@@ -27,6 +27,13 @@
 #include <string.h>
 #include <argp.h>
 
+// Txinto: I had to add this to compile in windows
+#ifdef _WIN32
+#define HAVE_ASPRINTF 0
+#define HAVE_RANDOM 0
+#endif
+
+
 /*
  * Implementation of random() for systems that don't have it.
  * Suitable for test purposes only, not for production code.
