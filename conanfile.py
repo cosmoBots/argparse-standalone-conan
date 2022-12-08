@@ -20,6 +20,8 @@ class ArgparseStandaloneConan(ConanFile):
 
     def source(self):
         self.run("git clone https://github.com/cosmoBots/argp-standalone.git")
+        self.run("cd argp-standalone && git checkout 1.0.1")
+
         # This small hack might be useful to guarantee proper /MT /MD linkage
         # in MSVC if the packaged project doesn't have variables to set it
         # properly
